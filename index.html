@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!--    <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/topbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/center.css">
+    <link rel="stylesheet" href="css/right.css">
+</head>
+<body><div id="topbar"></div>
+<div class="container">
+    <div id="sidebar"></div>
+        <div class="content">
+            <div id="task-list"></div>
+            <div id="task-details"></div>
+        </div>
+</div>
+
+<script>
+    function loadHTML(file, elementId) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            });
+    }
+
+    // Load components
+    loadHTML('components/topbar.html', 'topbar');
+    loadHTML('components/sidebar.html', 'sidebar');
+    loadHTML('components/center.html', 'task-list');
+    loadHTML('components/right-panel.html', 'task-details');
+
+</script>
+</body>
+</html>

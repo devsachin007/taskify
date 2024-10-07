@@ -1,0 +1,83 @@
+.sidebar {
+    width: 250px;
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 90vh;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li.active a {
+    background-color: #000;
+    color: white;
+}
+
+.sidebar nav ul li a:hover i,
+.sidebar nav ul li.active a i {
+    color: white;
+}
+
+.sidebar nav ul li:hover::before,
+.sidebar nav ul li.active::before {
+    background-color: #6d25f3;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar .profile {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar .profile .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .profile .info .name {
+    font-weight: bold;
+}
+
+.sidebar .profile .info .role {
+    color: #b0b0b0;
+    font-size: 14px;
+}
